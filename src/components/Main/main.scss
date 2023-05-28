@@ -1,0 +1,176 @@
+:root {
+  --PrimaryColor: hsl(199, 100%, 33%);
+  --SecondaryColor: hsl(187, 85%, 43%);
+  --gradientColor: linear-gradient (to right, hsl(187, 85%, 43%), hsl(199, 100%, 33%));
+  --whiteColor: hsl(0, 0%, 100%);
+  --blaclColor: hsl(201, 33%, 16%);
+  --textColor: hsl(240, 4%, 36%);
+  --whiteColorDream: hsl(0, 0%, 93%);
+  --greyText: rgb(190, 190, 190);
+  --inputColor: rgb(239, 239, 239);
+  --bodyColor: rgb(240, 240, 246);
+  --cardGB: rgb(225, 225, 235);
+  --cardHover: rgb(255, 255, 255);
+}
+
+
+.main{
+  width: 100%;
+
+  .secTitle {
+    .title {
+      position: relative;
+      width: max-content;
+      color: var(--textColor);
+      margin-bottom: 20px;
+      z-index: 2;
+    }
+  }
+
+  .secContent {
+    justify-content: center;
+    gap: 1.4rem;
+    
+    .singleDestination {
+      height: 100%;
+      display: grid;
+      padding: 1rem;
+      row-gap: 10px;
+      border-radius: 15px;
+      align-items: center;
+      background-color: var(--cardGB);
+      box-shadow: 0 2px 4px rgb(140, 140, 141, 0.55);
+      overflow: hidden;          transition: 0.6s ease-in-out;
+
+
+        &:hover {
+          background: var(--cardHover);
+          box-shadow: 1px 4px 4px rgb(140, 140, 114, 0.55);
+          // transform: translateX(0.5rem);
+        }
+        .imageDiv {
+          height: 180px;
+          width: 100%;
+          overflow: hidden;
+          
+            img {
+              height: 100%;
+              width: 100%;
+              object-fit: cover;
+              transition: 2s ease;
+            }
+            &:hover {
+              img {
+                transform: scale(1.1);
+                border-radius: 5px;
+              }
+            }
+        }
+      .cardInfo {
+        padding: 1rem;
+
+          .destTitle {
+            color: var(--blaclColor);
+            font-size: 1.5rem;
+          }
+
+          .content {
+            gap: 0.5rem;
+
+            .icon {
+              color: var(--textColor);
+              font-size: 18px;
+            }
+            .name {
+              color: var(--textColor);
+              font-weight: 400;
+              font-size: 14px;
+            }
+          }
+        .fees {
+          width: 100%;
+          justify-content: space-between;
+          padding: 1rem;
+          margin: 1rem 0;
+          border-top: 2.5px solid var(--greyText);
+          border-bottom: 2.5px solid var(--greyText);
+          font-style: italic;
+
+            .grade {
+              color: var(--textColor);
+              max-width: 100%;
+              line-height: 20px;
+              display: flex;
+              align-items: center;
+              justify-items: center;
+              font-size: 20px;
+
+              
+                small {
+                  text-align: center;
+                  background: var(--SecondaryColor);
+                  color: var(--whiteColor);
+                  padding: 5px 10px;
+                  font-size: 10px;
+                  border-radius: 1rem;
+                  margin-left: 2px;
+                }
+            }
+        .price {
+          font-size: 2rem;
+          color: var(--blaclColor);
+        }    
+        }  
+
+        .desc {
+          font-size: 14px;
+          color: var(--textColor);
+          font-weight: 500;
+        }
+      .btn {
+        margin-top: 1rem;
+        color: var(--whiteColor);
+        font-weight: 600;
+        justify-content: space-between;
+        gap: 0.5rem;
+
+        .icon {
+          align-self: center;
+          font-size: 18px;
+        }
+      }  
+      }  
+    }
+  }
+}
+
+
+// MEDIA QUERIES
+
+@media screen and (min-width: 667px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+    .secContent {
+      grid-template-columns: repeat(2, 1fr);
+
+      .singleDestination {
+        height: auto;
+
+      }
+    }
+}
+
+
+@media screen and (min-width: 992px) {
+  .secContent {
+    grid-template-columns: repeat(3, 1fr);
+
+    .singleDestination {
+      height: auto;
+
+    }
+  }
+
+}
